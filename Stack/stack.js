@@ -32,3 +32,57 @@
 //^ stack's real time use
 //! undo operatons
 //! stack of plates
+
+//^ Implementaion
+//* Array based Implementation
+//* Linked-list based Implementaion
+
+//* Array-based Impleneations
+//! uses an array to store the elements
+//! simple and easy to implement
+//! Fixed size if array is not dynamically resizable
+
+class Stack {
+    constructor() {
+        this.stackItems = []
+    }
+    push(element) {
+        return this.stackItems.push(element)
+    }
+    pop() {
+        if (this.isEmpty()) {
+            return "Stack is empty"
+        }
+        return this.stackItems.pop()
+    }
+    peek() {
+        if (this.isEmpty()) {
+            return "Stack is empty"
+        }
+        return this.stackItems[this.size() - 1]
+
+    }
+    isEmpty() {
+        return this.size() === 0
+    }
+    size() {
+        return this.stackItems.length
+    }
+}
+
+const stack = new Stack()
+console.log(stack);
+stack.push(10)
+stack.push(20)
+console.log(stack.isEmpty());
+console.log(stack.size());
+console.log(stack.peek());
+console.log(stack.pop());
+console.log(stack.pop());
+console.log(stack.peek());
+console.log(stack.isEmpty());
+
+
+
+
+
