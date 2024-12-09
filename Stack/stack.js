@@ -42,45 +42,99 @@
 //! simple and easy to implement
 //! Fixed size if array is not dynamically resizable
 
-class Stack {
-    constructor() {
-        this.stackItems = []
-    }
-    push(element) {
-        return this.stackItems.push(element)
-    }
-    pop() {
-        if (this.isEmpty()) {
-            return "Stack is empty"
-        }
-        return this.stackItems.pop()
-    }
-    peek() {
-        if (this.isEmpty()) {
-            return "Stack is empty"
-        }
-        return this.stackItems[this.size() - 1]
+// class Stack {
+//     constructor() {
+//         this.stackItems = []
+//     }
+//     push(element) {
+//         return this.stackItems.push(element)
+//     }
+//     pop() {
+//         if (this.isEmpty()) {
+//             return "Stack is empty"
+//         }
+//         return this.stackItems.pop()
+//     }
+//     peek() {
+//         if (this.isEmpty()) {
+//             return "Stack is empty"
+//         }
+//         return this.stackItems[this.size() - 1]
 
-    }
-    isEmpty() {
-        return this.size() === 0
-    }
-    size() {
-        return this.stackItems.length
+//     }
+//     isEmpty() {
+//         return this.size() === 0
+//     }
+//     size() {
+//         return this.stackItems.length
+//     }
+// }
+
+// const stack = new Stack()
+// console.log(stack);
+// stack.push(10)
+// stack.push(20)
+// console.log(stack.isEmpty());
+// console.log(stack.size());
+// console.log(stack.peek());
+// console.log(stack.pop());
+// console.log(stack.pop());
+// console.log(stack.peek());
+// console.log(stack.isEmpty());
+
+//* Linked-List Based Implementations
+
+class Node {
+    constructor(value){
+        this.value = value
+        this.next = null
     }
 }
-
+class Stack {
+    constructor(){
+        this.top = null
+        this.size = 0
+    }
+    isEmpty() {
+        return this.size == 0
+    }
+    push(value){
+        const newNode = new Node(value)
+        // console.log(newNode);
+        
+        if(this.top){
+            newNode.next = this.top
+        }
+        this.top = newNode
+        this.size ++
+    }
+    pop(){
+        if(!this.top){
+            return "Stack is empty"
+        }
+        const value = this.top.value;
+        this.top = this.top.next
+        this.size--
+        return value
+    }
+    peek() {
+        return this.top ? this.top.value : "Empty"
+    }
+}
 const stack = new Stack()
 console.log(stack);
+console.log(stack.isEmpty());
+stack.pop()
 stack.push(10)
 stack.push(20)
-console.log(stack.isEmpty());
-console.log(stack.size());
-console.log(stack.peek());
+console.log(stack);
+stack.pop()
 console.log(stack.pop());
-console.log(stack.pop());
+console.log(stack);
+console.log(stack.size);
+stack.push(30)
 console.log(stack.peek());
-console.log(stack.isEmpty());
+
 
 
 
