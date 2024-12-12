@@ -68,6 +68,9 @@
 //     size() {
 //         return this.stackItems.length
 //     }
+//         display() {
+//             console.log(this.stackItems.join(" -> "))
+//         }
 // }
 
 // const stack = new Stack()
