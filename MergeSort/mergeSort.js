@@ -8,6 +8,11 @@
 //! Split the array - recursively split the array into halves until we have subarrays of size 1(base case)
 //! Merge the sorted subarrays 
 
+//^ Advantages 
+//! No recursion or stack overflow issues
+//! Slightly more space - efficient
+
+
 //* Merge function
 //! the merge function takes two sorted arrays and merges them into a single sorted array
 
@@ -55,3 +60,4 @@ const arr = [38, 27, 43, 3, 9, 82, 10]
 console.log(`Orinal : ${arr}` )
 const sortArr = mergeSort(arr)
 console.log(`Sorted : ${sortArr}`);
+
