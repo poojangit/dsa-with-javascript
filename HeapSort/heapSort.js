@@ -39,8 +39,9 @@ function heapify(arr, n, i) {
 
         //! Recursively heapify the affected subtree
         heapify(arr, n, largest);
-    }
+    }w
 }
+
 const arr = [4, 2, 6, 8, 9, 1, 7];
 const result = heapSort(arr);
 console.log(result); 
