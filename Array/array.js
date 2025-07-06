@@ -27,7 +27,7 @@ class MyArray {
     let result = "";
     for (let i = 0; i < this.length; i++) {
       result += this.data[i];
-      if (i < this.length - 1) result += ", ";
+      if (i < this.length - 1) result += ",  ";
     }
     return `[${result}]`;
   }
